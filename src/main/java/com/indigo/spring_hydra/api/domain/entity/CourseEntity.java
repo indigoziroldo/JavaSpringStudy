@@ -31,7 +31,7 @@ public class CourseEntity {
     private LocalDateTime endDate;
 
     @Column
-    private SubjectsEnum subjects;
+    private SubjectsEnum subject;
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")
