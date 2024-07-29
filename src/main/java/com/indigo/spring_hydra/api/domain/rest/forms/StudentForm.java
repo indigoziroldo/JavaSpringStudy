@@ -3,8 +3,8 @@ package com.indigo.spring_hydra.api.domain.rest.forms;
 import lombok.Getter;
 
 @Getter
-public class AddressForm {
+public class StudentForm {
     private Long id;
-    private String city;
-
+    private String name;
+    private String address;
 }
