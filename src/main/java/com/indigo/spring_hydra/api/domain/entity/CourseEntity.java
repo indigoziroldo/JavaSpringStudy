@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Entity
-@Table(name = "COURSE", schema = "public")
+@Table(name = "COURSE")
 public class CourseEntity {
 
     @Id
@@ -33,8 +33,11 @@ public class CourseEntity {
     @Column
     private SubjectsEnum subject;
 
+    @Column(name = "teacher_id")
+    private Long teacherId;
+
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "teacher_id", updatable = false, nullable = false)
     private TeacherEntity teacher;
 
     @ManyToMany(mappedBy = "courses")

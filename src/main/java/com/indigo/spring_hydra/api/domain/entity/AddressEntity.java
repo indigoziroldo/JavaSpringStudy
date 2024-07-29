@@ -4,7 +4,7 @@ import com.indigo.spring_hydra.api.domain.entity.embeddable.CityEmbeddable;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ADRESS")
+@Table(name = "ADDRESS")
 public class AddressEntity {
 
     @Id
@@ -14,6 +14,9 @@ public class AddressEntity {
     @Embedded
     private CityEmbeddable city;
 
-    @OneToOne(mappedBy = "adress")
+    @Column(name = "address")
+    private Long studedId;
+
+    @OneToOne(mappedBy = "address")
     private StudentEntity student;
 }

@@ -14,12 +14,18 @@ public class StudentEntity {
 
     private String name;
 
+    @Column(name = "address_id")
+    private Long addressId;
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adress_id", referencedColumnName = "id")
-    private AdressEntity adress;
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private AddressEntity address;
+
+//    @Column(name = "student_courses")
+//    private Set<CourseEntity> studentCourses;
 
     @ManyToMany
-    @JoinTable(     name = "student_course",
+    @JoinTable(     name = "student_courses",
                     joinColumns = @JoinColumn(name = "student_id"),
                     inverseJoinColumns = @JoinColumn(name = "course_id"))
     Set<CourseEntity> courses;
