@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Entity
@@ -35,5 +36,8 @@ public class CourseEntity {
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private TeacherEntity teacher;
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<StudentEntity> students;
 
 }
